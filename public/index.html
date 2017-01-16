@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
+        <!-- Libraries/Frameworks -->
+        <script type="text/javascript" src="libs/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="libs/underscore-min.js"></script>
+        <script type="text/javascript" src="libs/backbone-min.js"></script>
+        <script type="text/javascript" src="libs/pubsub.min.js"></script>
+        
+        <!-- Scripts -->
+        
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            var minified = urlParams.get('Minified');
+            
+            if(minified && minified.toLowerCase() === "true") {
+                
+                document.write("<script type='text/javascript' src='js/Services/ItemService.js'><\/script>");
+                document.write("<script type='text/javascript' src='js/Services/TemplateService.js'><\/script>");
+                document.write("<script type='text/javascript' src='js/main.js'><\/script>");
+                document.write("<script type='text/javascript' src='js/initialize.js'><\/script>");
+                document.write("<script type='text/javascript' src='js/router.js'><\/script>");
+                
+                document.write("<link rel='stylesheet' type='text/css' href='css/glyphs.css'>");
+                document.write("<link rel='stylesheet' type='text/css' href='css/style.css'>");
+                
+            } else {
+                document.write("<script type='text/javascript' src='js/app.min.js'><\/script>");
+                document.write("<link rel='stylesheet' type='text/css' href='css/main.min.css'>");
+            }
+        </script>
+
+    </head>
+
+    <body>
+        
+        <!-- Placeholder For Product List -->
+        <div id="productListContainer" class="hidden"></div>
+        
+        <!-- Placeholder for Product Detail -->
+        <div id="productDetail" class="hidden details-container"></div>
+        
+    </body
+
+</html>

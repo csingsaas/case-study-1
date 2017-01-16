@@ -1,0 +1,152 @@
+
+<div class="details clearfix">
+    
+    <div class="details-left">
+        <h1><%= Item.title %></h1>
+            
+        <div class="js-item-images"></div>
+            
+    </div>
+
+    <div class="details-right">
+
+        <p class="price"><%= Item.price %> <span>online price</span></p>
+            
+        <% if(Item.promotions.length > 0) { %>
+            <ul class="promotions">
+                <% _.each(Item.promotions, function(promo) { %>
+                    <li><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= promo %></li>
+                <% }); %>
+            </ul>
+        <% } %>
+            
+        <div class="quantity clearfix">
+            
+            <div class="half quantity-box clearfix">
+                <div class="quantity-label half">quantity:</div>
+                <div class="half text-right clearfix">
+                    <button class="quantity-control right js-quantity-minus">
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </button>
+                    <span class="right quantity-amt js-quantity">1</span>
+                    <button class="quantity-control right js-quantity-plus">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="clearfix purchase-wrapper">
+            <div class="half text-center">
+                <% if(Item.purchasingChannel == 0 || Item.purchasingChannel == 2) { %>
+                    <button type="button" class="btn primary-btn">Pick-up in store</button>
+                    <a href="#">find in a store</a>
+                <% } %>
+            </div>
+            <div class="half-spacer">&nbsp;</div>
+            <div class="half text-center">
+                <% if(Item.purchasingChannel == 0 || Item.purchasingChannel == 1) { %>
+                    <button type="button"  class="btn primary-btn">Add to cart</button>
+                <% } %>
+            </div>
+        </div>
+            
+        <div class="returns clearfix">
+        
+            <p class="returns-label">returns</p>
+            
+            <p class="returns-desc">This item must be returned within 30 days of the ship date. See return policy for details.<br />Prices, promotions, styles and availability may vary by store and online.</p>
+            
+        </div>
+        
+        <div class="clearfix buttons-wrapper">
+            <div class="secondary-btn-container">
+                <button type="button" class="btn secondary-btn">Add to registry</button>
+            </div>
+            <div class="secondary-btn-spacer">&nbsp;</div>
+            <div class="secondary-btn-container">
+                <button type="button" class="btn secondary-btn">Add to list</button> 
+            </div>
+            <div class="secondary-btn-spacer">&nbsp;</div>
+            <div class="secondary-btn-container">
+                <button type="button" class="btn secondary-btn">Share</button> 
+            </div>
+        </div>
+            
+        <% if(Item.features.length > 0) { %>
+            <div class="product-highlights">
+                <h2>product highlights</h2>
+
+                <ul>
+                    <% _.each(Item.features, function(feature) { %>
+                        <li><%= feature %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% } %>
+        
+    </div>
+                        
+    <div class="reviews-container clearfix">
+        
+        <div class="reviews-summary clearfix">
+            
+            <div class="col-50">
+                
+                <% for (i = 0; i < Item.starRating; i++) { %>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <% } %> <span class="overall">overall</span>
+                    
+                
+            </div>
+            <div class="col-50 text-right">
+                <a href="" title="View all <%= Item.totalReviews %> reviews">View all <%= Item.totalReviews %> reviews</a>
+            </div>
+        
+        </div>
+        
+        <div class="review-wrapper clearfix">
+            <div class="half review">
+
+                <div class="review-heading">
+                    <h3>Pro</h3>
+                    <p>Most helpful 4 to 5 star review</p>
+                </div>
+                
+                <div>
+                    <% for (i = 0; i < Item.proReview.rating; i++) { %>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <% } %>
+                </div>
+
+                <p class="review"><strong><%= Item.proReview.title %> </strong><%= Item.proReview.review %></p>
+
+                <p class="reviewed"><span><%= Item.proReview.by %></span> <%= Item.proReview.date %></p>
+
+            </div>
+            <div class="half-spacer">&nbsp;</div>
+            <div class="half review">
+
+                <div class="review-heading">
+                    <h3>Con</h3>
+                    <p>Most helpful 1 to 2 star review</p>
+                </div>
+                
+                <div>
+                    <% for (i = 0; i < Item.conReview.rating; i++) { %>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <% } %>
+                </div>
+
+                <p class="review"><strong><%= Item.conReview.title %> </strong><%= Item.conReview.review %></p>
+
+                <p class="reviewed"><span><%= Item.conReview.by %></span> <%= Item.conReview.date %></p>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+

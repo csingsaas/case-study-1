@@ -1,0 +1,12 @@
+
+<% if(Items.length) { %>
+    <ul>
+<% } %></%>
+
+<% $.each(Items, function(Key, Item) { %>
+    <li><a href="#item/<%= Item.get('itemId') %>"><%= Item.get("title") %></a></li>
+<% }); %>
+    
+<% if(Items.length) { %>
+    </ul>
+<% } %></%>

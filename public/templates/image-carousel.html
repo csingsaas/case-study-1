@@ -1,0 +1,40 @@
+
+<% if(Images.length > 0) { %>
+
+    <div class="images">
+
+        <img src="<%= Images[0] %>" class="primary-image js-large-image" alt="<%= Item.title %> Image" />
+
+        <p><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span> view larger</p>
+
+        
+        <% if(Images.length > 1) { %>
+            
+            <div class="thumbnails-container text-center">
+                
+                <div class="thumbnails clearflix">
+
+                    <div class="backwards nav-button">
+                        <button type="button" class="js-previous-image"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                    </div>
+
+                    <div class="js-previous-thumbnail thumbnail hidden"><button type="button" class="js-previous-image"></button></div>
+
+                    <div class="js-active-thumbnail thumbnail active-thumbnail"></div>
+
+                    <div class="js-next-thumbnail thumbnail hidden"><button type="button" class="js-next-image"></button></div>
+
+                    <div class="forwards nav-button">
+                        <button type="button" class="js-next-image"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+        <% } %>
+
+    </div>
+
+<% } %>
+            

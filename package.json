@@ -1,0 +1,27 @@
+{
+  "name": "case-study-1",
+  "version": "1.0.0",
+  "description": "Front-end developer case study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csingsaas/case-study-1.git"
+  },
+  "author": "Cody Singsaas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csingsaas/case-study-1/issues"
+  },
+  "homepage": "https://github.com/csingsaas/case-study-1#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
+}
