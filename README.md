@@ -8,10 +8,6 @@ To run application
 	3) Type 'node app.js'
 	4) Open web browser, navigate to 'http://localhost:3000'
     
-Look at tying into Node
-'underscore.js'
-'backbone.js'
-'jquery 2.2.4'
-'pubSub' https://github.com/mroderick/PubSubJS
+When running - you can view un-minified JS/CSS by using the query string paramter "Minified=True"
 
-We can potentially uninstall modules 'underscore-express', 'consolidate'
+The continuous delivery diagram can be found in the root, "Continuous Delivery.pdf"
